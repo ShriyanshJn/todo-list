@@ -11,7 +11,7 @@ export class AddTodoComponent implements OnInit {
   title!: string
   desc!: string
 
-  //* sending data to parent component which holds the todo list
+  //* sending data from child component to parent component which holds the todo list
   @Output() todoAdd: EventEmitter<Todo> = new EventEmitter()
 
   constructor() { }
