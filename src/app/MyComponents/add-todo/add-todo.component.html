@@ -1,0 +1,19 @@
+<!--* ngClass is a directive in Angular which is used for dynamically applying CSS classes to HTML elements -->
+
+<div class="my-3">
+    <h4>Add a Todo</h4>
+    <!--? ngSubmit is a directive in Angular which is used to execute method,handler,listner,etc on form submission -->
+    <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <!--* ngModel is a directive in Angular used for two-way data binding. It allows you to bind the value of an input field in your template to a variable in your component, and vice versa -->
+            <!--* changes in the input field are automatically reflected in the associated variable, and changes in the variable are reflected in the input field -->
+            <input type="text" [(ngModel)]="title" class="form-control" id="title" name="title">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <input type="text" [(ngModel)]="desc" class="form-control" id="desc" name="desc">
+        </div>
+        <button type="submit btn-sm" class="btn btn-primary">Add</button>
+    </form>
+</div>
