@@ -1,12 +1,16 @@
+<div class="container mb-3">
+    <h1 class="text-center">Todo List</h1>
+</div>
 <app-add-todo (todoAdd)="AddTheTodo($event)"></app-add-todo>
 <h4>Your Todos</h4>
 <div *ngIf="this.todos.length === 0; else elseBlock">You have nothing to do.</div>
 <ng-template #elseBlock>
     <!--* directives are custom html attributes, here we use *ngFor  -->
-    <div *ngFor="let todo of todos">
+    <div *ngFor="let todo of todos; index as i">
         <!-- <li>{{todo.sno}} - {{todo.title}} - {{todo.desc}}</li> -->
         <!--* passing a custom attribute using [] in our todo-item component -->
-        <app-todo-item [todo]="todo" (todoDelete)="DeleteTheTodo($event)"></app-todo-item>
+        <app-todo-item [todo]="todo" [i]="i" (todoDelete)="DeleteTheTodo($event)"
+            (todoCheckBox)="ToggleTodo($event)"></app-todo-item>
         <!--* <child-component (eventName)="someMethod($event)"></child-component> -->
     </div>
 </ng-template>
