@@ -34,7 +34,7 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm ci
-    - run: npm build --base-href /todo-list/
+    - run: npm run build --base-href /todo-list/
     - name: Setup Pages
       uses: actions/configure-pages@v4
     - name: Upload artifact
