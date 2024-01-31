@@ -1,3 +1,5 @@
+//* ng build --configuration production : builds the angular application for production
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TodosComponent } from './MyComponents/todos/todos.component';
